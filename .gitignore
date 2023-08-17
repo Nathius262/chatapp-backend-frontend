@@ -3,5 +3,6 @@ __pycache__/
 .pyc
 .env
 db.sqlite3
-assets/static_cdn/
-assets/media_cdn/
+static_cdn/
+media_cdn/
+cdn/
