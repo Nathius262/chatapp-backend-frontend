@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="keywords" content="chatapp, chat, GCMI, Glory Carriers Ministry">
+    <meta name="description" content="GCMI chat application">
+    <meta name="author" content="GCMI">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'fontawesome/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'fontawesome/css/brands.css' %}">
+    <link rel="stylesheet" href="{% static 'fontawesome/css/solid.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>
+        {% block title %}{% endblock %}
+    </title>
+
+    <script src="{% static 'js/jquery-2.1.1.min.js' %}"></script>
+</head>
+<body>
+
+    <div id="root" class="container-fluid">        
+    </div>
+
+    {% block content %}
+    {% endblock %}
+    <script type="module" src="{% static 'js/App.js' %}"></script>
+
+</body>
+</html>
