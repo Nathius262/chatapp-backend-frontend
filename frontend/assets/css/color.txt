@@ -1,0 +1,4 @@
+orange - rgb(229, 171, 80)
+grey-80% - rgb(27, 27, 27)
+brown - rgb(50, 42, 36)
+white - white
