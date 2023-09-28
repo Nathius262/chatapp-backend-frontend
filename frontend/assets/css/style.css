@@ -18,9 +18,6 @@
 body{
     background:var(--grey);
     color: var(--white);
-    font-size: larger;
-    padding: 2%;
-
 }
 
 .logo{
@@ -38,6 +35,9 @@ body{
     position: absolute;
 }
 
+.user-list{
+    overflow-x: auto;
+}
 .profile{
     background-color: var(--brown);
     background-image: url('../default.png');
@@ -93,10 +93,7 @@ body{
 .post .border-bottom{
     border-bottom: 1px solid var(--light-grey) !important;
 }
-.post .content-img{
-    width: 100%;
-    height: 200px;
-}
+
 .post .content-img img{
     width: 100%;
     border-radius: 15px;
@@ -113,16 +110,46 @@ body{
 }
 /* post end*/
 
+.modal{
+    color: var(--black);
+}
 
 /* footer begin*/
 footer{
-    background-color: var(--brown);
+    background-color: var(--grey);
     border-radius: 25px;
-    color: var(--light-grey);
+    color: var(--white);
     padding: 20px;
     position: fixed;
-    top: 83vh;
+    width: 84%;
+    top: 78%;
+    margin: 5px;
 }
-
+footer i:hover{
+    cursor: pointer;
+}
+footer .active-icon{
+    color: var(--orange);
+    display: grid;
+    align-items: center;
+}
+footer .active-icon::after{
+    content: "";
+    background-color: var(--orange);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    justify-self: center;
+    margin-top: 3px;
+}
+footer .fa-plus{
+    position: absolute;
+    background-color: var(--orange);
+    border-radius: 50%;
+    color: var(--white);
+    padding: 15px;
+    bottom: 70%;
+    left: 43%;
+}
 /* footer end*/
 
