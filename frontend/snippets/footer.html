@@ -1,0 +1,34 @@
+<div id="menu" class="menu justify-content-center align-items-center">
+    <i class="fa fa-bars fa-1x"></i>
+</div>
+
+<footer id="footer" class="shadow container fade-out" style="opacity:0;">
+    <div class="d-flex justify-content-between align-items-center p-4">
+        <i class="nav-icon fa-solid fa-home fa-2x {% if page == 'index' %}active-icon{% endif %}" data-action="home"></i>
+        
+        <i class="nav-icon fa-regular fa-commenting fa-2x {% if page == 'chat' %}active-icon{% endif %}" data-action="message"></i>
+        <i class="fa-regular fa-plus fa-3x " id="createpostBtn"></i>
+        <i class="nav-icon fa-regular fa-user fa-2x" data-action="profile"></i>
+        <i id="back-el" class="nav-icon fa fa-arrow-right fa-2x" data-action="back"></i>
+    </div>
+</footer>
+
+<script>
+    let menuEl = document.querySelector('#menu')
+    let footerEl = document.querySelector('#footer')
+    let backEl = document.querySelector('#back-el')
+    menuEl.addEventListener('click', () => {        
+        footerEl.classList.add('fade-in')
+        menuEl.classList.add('fade-out')
+
+        footerEl.classList.remove('fade-out')
+        menuEl.classList.remove('fade-in') 
+    })
+    backEl.addEventListener('click', ()=>{
+        footerEl.classList.remove('fade-in')
+        menuEl.classList.remove('fade-out')  
+        
+        footerEl.classList.add('fade-out')
+        menuEl.classList.add('fade-in')
+    })
+</script>

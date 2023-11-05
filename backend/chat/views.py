@@ -9,7 +9,16 @@ from rest_framework.permissions import IsAuthenticated
 import json
 
 def index_view(request):
-    return render(request, "index.html")
+    context = {
+        "page": 'index'
+    }
+    return render(request, "index.html", context)
+
+def chat_view(request):
+    context = {
+        "page": 'chat'
+    }
+    return render(request, "chat.html", context)
 
 
 class MessageViewSets(generics.ListAPIView, mixins.RetrieveModelMixin, mixins.CreateModelMixin):

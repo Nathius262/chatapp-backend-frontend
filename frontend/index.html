@@ -17,28 +17,59 @@
         <ul class="container user-list list-unstyled d-flex">
             <li>
                 <div class="profile main-list">
-                    <!--<img src="{% static 'img/bg.webp' %}" alt="user profile image">-->
+                    <img src="{% static 'img/bg.webp' %}" alt="">
                     <i class="border fa-solid fa-plus"></i>
                 </div>
                 <div class="profile-name">You</div>
             </li>
             
-            <li><div class="profile"></div><div class="profile-name">random</div></li>
-            <li><div class="profile"></div><div class="profile-name">random</div></li>
-            <li><div class="profile"></div><div class="profile-name">random</div></li>
-            <li><div class="profile"></div><div class="profile-name">random</div></li>
-            <li><div class="profile"></div><div class="profile-name">random</div></li>
-            <li><div class="profile"></div><div class="profile-name">random</div></li>
-            <li><div class="profile"></div><div class="profile-name">random</div></li>
-            <li><div class="profile"></div><div class="profile-name">random</div></li>
-            <li><div class="profile"></div><div class="profile-name">random</div></li>
+            <li>
+                <div class="profile"><img src="{% static 'default.png' %}" alt=""></div>
+                <div class="profile-name">random</div>
+            </li>
+            <li>
+                <div class="profile"><img src="{% static 'default.png' %}" alt=""></div>
+                <div class="profile-name">random</div>
+            </li>
+            <li>
+                <div class="profile"><img src="{% static 'default.png' %}" alt=""></div>
+                <div class="profile-name">random</div>
+            </li>
+            <li>
+                <div class="profile"><img src="{% static 'default.png' %}" alt=""></div>
+                <div class="profile-name">random</div>
+            </li>
+            <li>
+                <div class="profile"><img src="{% static 'default.png' %}" alt=""></div>
+                <div class="profile-name">random</div>
+            </li>
+            <li>
+                <div class="profile"><img src="{% static 'default.png' %}" alt=""></div>
+                <div class="profile-name">random</div>
+            </li>
+            <li>
+                <div class="profile"><img src="{% static 'default.png' %}" alt=""></div>
+                <div class="profile-name">random</div>
+            </li>
+            <li>
+                <div class="profile"><img src="{% static 'default.png' %}" alt=""></div>
+                <div class="profile-name">random</div>
+            </li>
+            <li>
+                <div class="profile"><img src="{% static 'default.png' %}" alt=""></div>
+                <div class="profile-name">random</div>
+            </li>
+            <li>
+                <div class="profile"><img src="{% static 'default.png' %}" alt=""></div>
+                <div class="profile-name">random</div>
+            </li>
         </ul>
     </div>
 
-    <div class="post">
+    <div class="post col-md-6">
         <div class="author d-flex justify-content-between align-items-center mt-4 pb-3 border-bottom">
             <div class="profile-name d-flex align-items-center">
-                <div class="profile me-3 shadow"></div>
+                <div class="profile me-3 shadow"><img src="{% static 'default.png' %}" alt=""></div>
                 <span class="fw-bold">username</span>
             </div>
             <div>
@@ -63,10 +94,10 @@
         </div>
     </div>
 
-    <div class="post">
+    <div class="post col-md-6">
         <div class="author d-flex justify-content-between align-items-center mt-4 pb-3 border-bottom">
             <div class="profile-name d-flex align-items-center">
-                <div class="profile me-3 shadow"></div>
+                <div class="profile me-3 shadow"><img src="{% static 'default.png' %}" alt=""></div>
                 <span class="fw-bold">username</span>
             </div>
             <div>
@@ -91,10 +122,10 @@
         </div>
     </div>
 
-    <div class="post">
+    <div class="post col-md-6">
         <div class="author d-flex justify-content-between align-items-center mt-4 pb-3 border-bottom">
             <div class="profile-name d-flex align-items-center">
-                <div class="profile me-1 shadow"></div>
+                <div class="profile me-1 shadow"><img src="{% static 'default.png' %}" alt=""></div>
                 <span class="fw-bold">username</span>
             </div>
             <div>
@@ -119,15 +150,7 @@
         </div>
     </div>
 </main>
-<footer class="shadow container">
-    <div class="d-flex justify-content-between align-items-center p-4">
-        <i class="fa-solid fa-home fa-2x active-icon"></i>
-        
-        <i class="fa-regular fa-commenting fa-2x"></i>
-        <i class="fa-regular fa-plus fa-3x " id="createpostBtn"></i></button>
-        <i class="fa-regular fa-commenting fa-2x"></i>
-        <i class="fa-regular fa-user fa-2x"></i>
-    </div>
-</footer>
+
+{% include 'snippets/footer.html' %}
 {% include 'snippets/modal.html' %}
 {% endblock content %}

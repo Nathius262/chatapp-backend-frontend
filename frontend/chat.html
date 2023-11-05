@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %}chat{% endblock title %}
+{% load static %}
+{% block content %}
+
+<style>
+    .chat-list{
+        height: 80vh;
+        overflow-y: scroll;
+    }
+    .author:hover{
+        background-color: var(--trans-dark);
+        cursor: pointer;
+        border-radius: 10px;
+        padding: 0 12px;
+        transition: padding .8s, background-color .8s;
+    }
+    .author .logo{
+        height: 20px !important; 
+        width: 20px !important;
+    }
+    .author .logo div{
+        position: relative;
+    }
+</style>
+
+
+<main>
+
+    <div class="row">
+        {% include 'chat/chat_list.html' %}
+        {% include 'chat/message.html' %}
+    </div>
+
+    
+</main>
+
+<script>
+    let formSearch = document.querySelector('#form-search')
+    let userMessage = document.querySelectorAll('.author')
+    formSearch.addEventListener('submit', (event)=>{
+        event.preventDefault()
+        console.log('searching...')
+    })
+
+    for (message of userMessage){
+        message.addEventListener('click', ()=>{
+            test()
+        })
+    }
+    function test(){
+        console.log("userMessage")
+    }
+</script>
+
+
+{% include 'snippets/footer.html' %}
+{% include 'snippets/modal.html' %}
+{% endblock %}

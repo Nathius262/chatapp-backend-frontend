@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-gvdgiwq3br$xn(bb1yb*2yzdra&_k&6+9($3gx+j0+s44a@*e6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', ]
+ALLOWED_HOSTS = ['localhost', ]
 
 
 # Application definition
@@ -246,12 +246,12 @@ ACCOUNT_EMAIL_REQUIRED = True
 ###############
 CORS_URLS_REGEX = r"^/api/.*$"
 
-CORS_ALLOWED_ORIGINS = ["http://127.0.0.1:8000", "http://127.0.0.1:5500"]
+CORS_ALLOWED_ORIGINS = ["http://localhost:8000", "http://localhost:5500"]
 
 if DEBUG:
     CORS_ALLOWED_ORIGINS += [
     "http://localhost:5500",
-    "http://127.0.0.1:5500",
+    "http://localhost:5500",
     ]
 
 #APPEND_SLASH=False

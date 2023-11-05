@@ -20,6 +20,20 @@ body{
     color: var(--white);
 }
 
+#search{
+    background-color: var(--brown);
+    border:none;
+    color: var(--white);
+}
+
+input:active, input:focus, input:focus-visible{
+    border: none;
+    outline: none;
+    color: var(--white);
+}
+
+
+
 .logo{
     background-color: var(--orange);
     height: 50px;
@@ -46,14 +60,22 @@ body{
     height: 60px;
     border: 2px solid var(--orange);
     border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile img{
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
 }
 .user-list li{
     margin-right: 20px;
 }
+/*
 .user-list .profile img{
     width: 90%;
     position: relative;
-}
+}*/
 .user-list .main-list{
     border: none;
 }
@@ -114,6 +136,71 @@ body{
     color: var(--black);
 }
 
+/*message*/
+.message-body{
+    width:100%;
+    height: 500px;
+    overflow-y: scroll;
+}
+.message-body .img-profile{
+    height: 50px;
+    width: 50px;
+    margin-left: 13px;
+}
+.message-body ul{
+    display: grid;   
+}
+.message-body ul .list-img{
+    color: var(--white);
+}
+.message-body ul p{
+    max-width: 300px;
+}
+.message-body ul .sender{
+    justify-self: end;
+}
+.message-body ul .receiver{
+    justify-self: start;    
+}
+
+.message-text-receiver{
+    background-color: var(--brown);
+    padding: 8px;
+    border-radius: 20px;
+    border-top-left-radius: 0;
+}
+.message-text-sender{
+    background-color: var(--orange);
+    padding: 8px;
+    border-radius: 20px;
+    border-top-right-radius: 0;
+
+}
+.message{
+    margin-top: 30px;
+}
+#message{
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: var(--brown);
+    color: var(--white);
+}
+.message button{
+    position: fixed;
+    z-index: 1;
+    align-self: center;
+    align-items: center;
+    left: 87%;
+    border: none;
+    outline: none;
+    background-color: none;
+    background: none;
+    height: auto;
+    margin: 0;
+    color: var(--orange);
+}
+
 /* footer begin*/
 footer{
     background-color: var(--grey);
@@ -125,10 +212,10 @@ footer{
     top: 78%;
     margin: 5px;
 }
-footer i:hover{
+i:hover{
     cursor: pointer;
 }
-footer .active-icon{
+.active-icon{
     color: var(--orange);
     display: grid;
     align-items: center;
@@ -142,7 +229,7 @@ footer .active-icon::after{
     justify-self: center;
     margin-top: 3px;
 }
-footer .fa-plus{
+footer .fa-plus, .menu{
     position: absolute;
     background-color: var(--orange);
     border-radius: 50%;
@@ -151,5 +238,42 @@ footer .fa-plus{
     bottom: 70%;
     left: 43%;
 }
+
+.menu{
+    position: fixed;
+    height: 50px;
+    width: 50px;
+    bottom: 20vh;
+    left: 90%;
+    z-index: 1;
+}
+.menu:hover{
+    cursor: pointer;
+    transform: translateY(-10%);
+    transition: transform .7s;
+}
 /* footer end*/
 
+@keyframes fadeIn{
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut{
+    to{
+        opacity: 0;
+    }
+}
+
+.fade-in{
+    opacity: 0;
+    animation: fadeIn .5s ease-in 1 forwards;
+    display: block;
+}
+
+.fade-out{
+    opacity: 0;
+    animation: fadeOut .5s ease-out 1 backwards;
+    display: none;
+}
