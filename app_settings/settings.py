@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     
     'backend.authentication.apps.AuthenticationConfig',
     'backend.chat.apps.ChatConfig',
+    'backend.user.apps.UserConfig',
     
     'allauth',
     'allauth.account',

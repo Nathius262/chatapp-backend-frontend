@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import Message, Friend
-from backend.authentication.models import CustomUser as User, CustomGroup as Group
+from backend.authentication.models import CustomUser as User
+from backend.user.models import  CustomGroup as Group
 import json
 
 class MessagePostSerializer(serializers.ModelSerializer):

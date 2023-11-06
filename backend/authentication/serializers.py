@@ -2,7 +2,7 @@ from django.core.exceptions import ValidationError as DjangoValidationError
 from django.utils.translation import gettext_lazy as _
 from rest_framework import serializers
 from dj_rest_auth.registration.serializers import RegisterSerializer
-from .models import CustomGroup, GroupPaticipant
+
 
 try:
     from allauth.account import app_settings as allauth_settings
@@ -70,24 +70,3 @@ class RegisterSerializer(RegisterSerializer):
         self.custom_signup(request, user)
         setup_user_email(request, user, [])
         return user
-    
-class CustomGroupSerializers(serializers.ModelSerializer):
-    
-    class Meta:
-        model = CustomGroup
-        exclude = ['id']
-
-
-class GroupPaticipantSerializers(serializers.ModelSerializer):
-
-    user = serializers.SerializerMethodField()
-
-    class Meta:
-        model = GroupPaticipant
-        exclude = ['id']
-
-    def get_user(self, obj):
-        user_list = []
-        for users in obj.user.all():
-            user_list.append(users.username)
-        return user_list

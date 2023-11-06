@@ -1,5 +1,6 @@
 from django.db.models.signals import post_save
-from .models import GroupPaticipant, CustomGroup, Profile, CustomUser
+from .models import GroupPaticipant, CustomGroup, Profile
+from ..authentication.models import CustomUser
 
 
 def create_group_paticipant(sender, instance, *args, **kwargs):
