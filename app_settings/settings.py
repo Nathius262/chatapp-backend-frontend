@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-gvdgiwq3br$xn(bb1yb*2yzdra&_k&6+9($3gx+j0+s44a@*e6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', ]
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -209,7 +209,7 @@ REST_AUTH = {
     'USE_JWT': True,
     'JWT_AUTH_HTTPONLY':True,
     'JWT_AUTH_COOKIE': 'access',
-    'JWT_AUTH_REFRESH_COOKIE': "refresh",
+    #'JWT_AUTH_REFRESH_COOKIE': "refresh",
 }
 
 
@@ -230,9 +230,9 @@ ACCOUNT_UNIQUE_EMAIL = True
 
 ACCOUNT_EMAIL_REQUIRED = True
 
-# REST_AUTH_REGISTER_SERIALIZERS ={
-#     'REGISTER_SERIALIZER': 'user.serializers.RegisterSerializer'
-# }
+REST_AUTH_REGISTER_SERIALIZERS ={
+     'REGISTER_SERIALIZER': 'user.serializers.RegisterSerializer'
+}
 
 # REST_AUTH_SERIALIZERS ={
 #     "LOGIN_SERIALIZER": 'user.serializers.LoginSerializer'
@@ -251,8 +251,8 @@ CORS_ALLOWED_ORIGINS = ["http://localhost:8000", "http://localhost:5500"]
 
 if DEBUG:
     CORS_ALLOWED_ORIGINS += [
-    "http://localhost:5500",
-    "http://localhost:5500",
+    "http://localhost:8000",
+    "http://localhost:8000",
     ]
 
 #APPEND_SLASH=False

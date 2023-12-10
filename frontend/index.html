@@ -8,13 +8,15 @@
             <div>GCMI <br> LOGO</div>
         </div>
         <div class="header-icon">
-            <i class="fa-solid fa-magnifying-glass fa-2x me-2"></i>
-            <i class="fa-regular fa-bell fa-2x"></i>
+            <button class="btn btn-outline-light mt-0 align-items-center align-self-center" data-bs-toggle="modal" data-bs-target="#nav-menu">
+                <i class="fa-solid fa-ellipsis-vertical fa-2x"></i>
+            </button>
+            
         </div>
     </div>
 
     <div class="">
-        <ul class="container user-list list-unstyled d-flex">
+        <ul class="container user-list list-unstyled d-flex" id="friendlist">
             <li>
                 <div class="profile main-list">
                     <img src="{% static 'img/bg.webp' %}" alt="">
@@ -23,134 +25,30 @@
                 <div class="profile-name">You</div>
             </li>
             
+            
             <li>
                 <div class="profile"><img src="{% static 'default.png' %}" alt=""></div>
                 <div class="profile-name">random</div>
             </li>
-            <li>
-                <div class="profile"><img src="{% static 'default.png' %}" alt=""></div>
-                <div class="profile-name">random</div>
-            </li>
-            <li>
-                <div class="profile"><img src="{% static 'default.png' %}" alt=""></div>
-                <div class="profile-name">random</div>
-            </li>
-            <li>
-                <div class="profile"><img src="{% static 'default.png' %}" alt=""></div>
-                <div class="profile-name">random</div>
-            </li>
-            <li>
-                <div class="profile"><img src="{% static 'default.png' %}" alt=""></div>
-                <div class="profile-name">random</div>
-            </li>
-            <li>
-                <div class="profile"><img src="{% static 'default.png' %}" alt=""></div>
-                <div class="profile-name">random</div>
-            </li>
-            <li>
-                <div class="profile"><img src="{% static 'default.png' %}" alt=""></div>
-                <div class="profile-name">random</div>
-            </li>
-            <li>
-                <div class="profile"><img src="{% static 'default.png' %}" alt=""></div>
-                <div class="profile-name">random</div>
-            </li>
-            <li>
-                <div class="profile"><img src="{% static 'default.png' %}" alt=""></div>
-                <div class="profile-name">random</div>
-            </li>
-            <li>
-                <div class="profile"><img src="{% static 'default.png' %}" alt=""></div>
-                <div class="profile-name">random</div>
-            </li>
+
         </ul>
     </div>
 
-    <div class="post col-md-6">
-        <div class="author d-flex justify-content-between align-items-center mt-4 pb-3 border-bottom">
-            <div class="profile-name d-flex align-items-center">
-                <div class="profile me-3 shadow"><img src="{% static 'default.png' %}" alt=""></div>
-                <span class="fw-bold">username</span>
-            </div>
-            <div>
-                <i class="fa-solid fa-ellipsis-vertical"></i>
-            </div>
-        </div>
+    <section id="post">
+    </section>
 
-        <div class="content mt-4">
-            <p class="">This is indeed the best moment of my life! Never that it would be exiting...</p>
-            <div class="content-img">
-                <img class="container" src="{% static 'img/sample.png' %}" alt="sample image">
-            </div>
-        </div>
-        <div class="content-footer mb-4 d-flex justify-content-between align-items-center mt-4">
-            <div>
-                <span class="me-4"><i class="fa-solid fa-heart"></i>1.42</span>
-                <span><i class="fa-regular fa-comment"></i>124</span>
-            </div>
-            <div class="">
-                2 hours ago
-            </div>
-        </div>
-    </div>
-
-    <div class="post col-md-6">
-        <div class="author d-flex justify-content-between align-items-center mt-4 pb-3 border-bottom">
-            <div class="profile-name d-flex align-items-center">
-                <div class="profile me-3 shadow"><img src="{% static 'default.png' %}" alt=""></div>
-                <span class="fw-bold">username</span>
-            </div>
-            <div>
-                <i class="fa-solid fa-ellipsis-vertical"></i>
-            </div>
-        </div>
-
-        <div class="content mt-4">
-            <p class="">This is indeed the best moment of my life! Never that it would be exiting...</p>
-            <div class="content-img">
-                <img class="container" src="{% static 'img/sample.png' %}" alt="sample image">
-            </div>
-        </div>
-        <div class="content-footer mb-4 d-flex justify-content-between align-items-center mt-4">
-            <div>
-                <span class="me-4"><i class="fa-solid fa-heart"></i>1.42</span>
-                <span><i class="fa-regular fa-comment"></i>124</span>
-            </div>
-            <div class="">
-                2 hours ago
-            </div>
-        </div>
-    </div>
-
-    <div class="post col-md-6">
-        <div class="author d-flex justify-content-between align-items-center mt-4 pb-3 border-bottom">
-            <div class="profile-name d-flex align-items-center">
-                <div class="profile me-1 shadow"><img src="{% static 'default.png' %}" alt=""></div>
-                <span class="fw-bold">username</span>
-            </div>
-            <div>
-                <i class="fa-solid fa-ellipsis-vertical"></i>
-            </div>
-        </div>
-
-        <div class="content mt-4">
-            <p class="">This is indeed the best moment of my life! Never that it would be exiting...</p>
-            <div class="content-img">
-                <img class="container" src="{% static 'img/sample.png' %}" alt="sample image">
-            </div>
-        </div>
-        <div class="content-footer mb-4 d-flex justify-content-between align-items-center mt-4">
-            <div>
-                <span class="me-4"><i class="fa-solid fa-heart"></i>1.42</span>
-                <span><i class="fa-regular fa-comment"></i>124</span>
-            </div>
-            <div class="">
-                2 hours ago
-            </div>
-        </div>
-    </div>
+    
 </main>
+
+<script type="module">
+    import { getUserFriend, postFeed } from "{% static 'js/components/chat.js' %}"
+    let friendlist = document.querySelector('#friendlist')
+    let post = document.querySelector('#post')
+    friendlist.insertAdjacentHTML('beforeEnd', getUserFriend())
+    post.insertAdjacentHTML('beforeEnd', postFeed())
+</script>
 
 {% include 'snippets/footer.html' %}
 {% include 'snippets/modal.html' %}
+{% include 'snippets/header_modal.html' %}
 {% endblock content %}

@@ -1,6 +1,13 @@
+
 from django.utils.translation import gettext_lazy as _
 from rest_framework import serializers
-from .models import CustomGroup, GroupPaticipant
+from .models import CustomGroup, GroupPaticipant, Profile
+
+
+class ProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Profile
+        exclude = ['id']
 
 class CustomGroupSerializers(serializers.ModelSerializer):
     

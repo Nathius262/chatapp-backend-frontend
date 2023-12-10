@@ -1,0 +1,79 @@
+<style>
+    ul{
+        list-style-type: none;
+    }
+    .modal-content {
+        background-color: var(--brown);
+
+    }
+</style>
+
+<div class="modal bg-dark text-dark" id="nav-menu" tabindex="-1" aria-labelledby="nav-menu" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-fullscreen" style="height:100vh; width:70vw; color:var(--white);">
+        <div class="modal-content">
+            <div class="modal-header">
+                {% if request.user.is_authenticated %}
+                <div class="profile d-flex align-items-center">
+                    <div style="width: 40px;" class="d-lg-block me-3 border rounded-5">
+                        <img width="100%" class="rounded-5" src="{{request.user.picture_url}}" alt="{{reqest.user}} profile image">
+                    </div>
+
+                    <div>
+                        <p class="m-0 p-0 fw-bolder fs-4">{{request.user}}</p>
+                        <p class="m-0 p-0">@{{request.user}}</p>
+                    </div>
+                </div>
+                {%endif%}
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="sidebarMenu" class="">
+                    <div class="nav_head ms-auto">
+                        <ul class="me-auto mb-2 mb-lg-0">
+                            <li class="nav-item mb-4">
+                                <a class="navbar-brand fs-4 ms-3 underline" href="#"><i class="fa fa-home me-2"></i> Home</a>
+                            </li>
+                            
+                            {% if request.user.is_authenticated %}
+
+                            <li class="nav-item mb-4">
+                                <a class="navbar-brand fs-4 ms-3" href="#"> <i class="fa-solid fa-bell me-2"></i> Notifications</a>
+                            </li>
+                            <li class="nav-item mb-4">
+                                <a class="navbar-brand fs-4 ms-3" id="logout"> <i class="fa-solid fa-right-from-bracket me-2"></i> Logout</a>
+                            </li>
+                            {% else %}
+                            <li class="nav-item mb-4">
+                                <a class="navbar-brand fs-4 ms-3" href="#"> <i class="fa-solid fa-right-to-bracket me-2"></i> Login</a>
+                            </li>
+                            <li class="nav-item mb-4">
+                                <a class="navbar-brand fs-4 ms-3" href="#"> <i class="fa-solid fa-user-plus me-2"></i> Sign up</a>
+                            </li>
+            
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>    
+    let logout = document.querySelector('#logout')
+    logout.addEventListener('click', ()=>{
+        fetch('api/auth/logout')
+        .then((response)=>{
+            return response.json()
+        })
+        .then((data)=>{
+            alert(data.detail)
+            window.location.reload()
+        })
+        .catch((err)=>{
+            alert(err)
+        })
+    })
+</script>

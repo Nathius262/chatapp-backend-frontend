@@ -13,12 +13,23 @@ for (let i of navIcon){
             icon.classList.remove('active-icon')
         })
         i.classList.add('active-icon')
+        let location
         if(i.dataset.action === "message"){
-            window.location.href = 'chat/'
+            location = '/chat/'
+            if (window.location.pathname != location){                
+                window.location.href = location
+            }
         }else if (i.dataset.action === "profile"){
-
+            location = '/api/profile/'
+            if (window.location.pathname != location){                
+                window.location.href = location
+            }
+            
         }else if (i.dataset.action === "home"){
-            window.location.href = '/'
+            location = '/'
+            if (window.location.pathname != location){                
+                window.location.href = location
+            }
         }
 
     })

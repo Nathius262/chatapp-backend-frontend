@@ -23,7 +23,7 @@ urlpatterns = [
     path("", include("backend.chat.urls")),
     path('api/auth/', include('dj_rest_auth.urls')),
     path('api/auth/signup/', include('dj_rest_auth.registration.urls')),
-    path('api/auth/', include('backend.user.urls')),
+    path('api/', include('backend.user.urls')),
     path('api/chat/', include('backend.chat.urls'))
 ]
 

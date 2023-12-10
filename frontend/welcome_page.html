@@ -10,19 +10,22 @@
 
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/form-validation.css' %}">
     <link rel="stylesheet" href="{% static 'fontawesome/css/fontawesome.css' %}">
     <link rel="stylesheet" href="{% static 'fontawesome/css/brands.css' %}">
     <link rel="stylesheet" href="{% static 'fontawesome/css/solid.css' %}">
     <link rel="stylesheet" href="{% static 'fontawesome/css/regular.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>
-        {% block title %}{% endblock %}
+        App Name
     </title>
-
+    {% block style %}
+    {%endblock%}
     <style>
         #root{
             display:none;
         }
+        
 
         #pageload{
             margin: 0;
@@ -82,12 +85,13 @@
         }
         
         .loading{
-            color: #737373;
-            font-size: 20px;
+            color: var(--orange);
+            font-size: xx-large;
             text-transform: uppercase;
             letter-spacing: 1px;
             line-height: 200px;
-            animation: text 2s ease-in-out infinite;
+            font-weight: bold;
+            /*nimation: text 2s ease-in-out infinite;*/
         }
         
         @keyframes text {
@@ -98,23 +102,6 @@
     </style>
 
     <script src="{% static 'js/jquery-2.1.1.min.js' %}"></script>
-    <script>
-        function getCookie(cookie_name) {
-            let name = cookie_name + "=";
-            let decodedCookie = decodeURIComponent(document.cookie);
-            let ca = decodedCookie.split(';');
-            for(let i = 0; i <ca.length; i++) {
-              let c = ca[i];
-              while (c.charAt(0) == ' ') {
-                c = c.substring(1);
-              }
-              if (c.indexOf(name) == 0) {
-                return c.substring(name.length, c.length);
-              }
-            }
-            return "";
-        }
-    </script>
 </head>
 <body>
 
@@ -126,21 +113,25 @@
         <div class="pageload">
             <div class="pageload_inner">
             </div>
-            <span class="loading">loading...</span>
+            <span class="loading">App Name</span>
         </div>
         <script>
             let pageload = document.getElementById('pageload')
             let rootEl = document.getElementById('root')
             window.addEventListener("load", () => {
                 rootEl.style.display = "block"
-                pageload.style.display = "none"
+                setTimeout(function(){
+                    pageload.style.display = "none"
+                }, 1000)
+                
                 
             })
         </script>
     </div>
+    {% block js %}{%endblock%}
+    <script src="{% static 'js/form-validation.js' %}"></script>
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 
-    <script type="module" src="{% static 'js/App.js' %}"></script>
-
+    
 </body>
 </html>
